@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.category_id = 1
     @product.save
-    redirect_to product_url @poduct
+    redirect_to("/")
   end
 
   def edit
@@ -26,7 +26,7 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     @product.update(product_params)
-    redirect_to product_url @product
+    redirect_to("/")
   end
 
   def destroy
