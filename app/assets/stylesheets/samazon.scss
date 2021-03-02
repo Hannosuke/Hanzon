@@ -91,60 +91,85 @@ label {
     background-color: #ffffff;
   }
   
-  .samazon-check-label {
-    font-family: YuGo;
-    font-size: 12px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #000000;
-  }
-  
-  .samazon-require-input-label {
-    border-radius: 1px;
-    background-color: #e2001b;
-  }
-  
-  .samazon-require-input-label-text {
-    font-family: YuGo;
-    font-size: 14px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #ffffff;
-  }
-  
-  .samazon-submit-button {
-    font-family: YuGo;
-    font-size: 14px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #b2b2b2;
-    color: #ffffff;
-    background-color: #0fbe9f;
-  }
-  
-  .samazon-login-text {
-    font-family: YuGo;
-    font-size: 14px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #0fbe9f;
-  }
-  
-  .samazon-error-message {
-    width: 100%;
-    margin-top: .25rem;
-    font-size: 80%;
-    color: #e3342f
-  }
+.samazon-check-label {
+  font-family: YuGo;
+  font-size: 12px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000000;
+}
+
+.samazon-require-input-label {
+  border-radius: 1px;
+  background-color: #e2001b;
+}
+
+.samazon-require-input-label-text {
+  font-family: YuGo;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+.samazon-submit-button {
+  font-family: YuGo;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #b2b2b2;
+  color: #ffffff;
+  background-color: #0fbe9f;
+}
+
+.samazon-login-text {
+  font-family: YuGo;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0fbe9f;
+}
+
+.samazon-error-message {
+  width: 100%;
+  margin-top: .25rem;
+  font-size: 80%;
+  color: #e3342f
+}
+
+.samazon-header-container {
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+.samazon-header-search-input {
+  border: solid 1px #e5e5e5;
+}
+
+.samazon-header-search-button {
+  background-color: #0fbe9f;
+}
+
+.samazon-header-search-icon {
+  color: #ffffff;
+}
+
+.samazon-header-fav-icon {
+  color: #191919;
+}
+
+.samazon-header-shoppingcart-icon {
+  color: #ffffff;
+}
