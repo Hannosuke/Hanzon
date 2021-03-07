@@ -82,4 +82,4 @@ production:
   <<: *default
   # username: samazon
   # password: <%= ENV['SAMAZON_DATABASE_PASSWORD'] %>
-  url: <%= ENV['DATABASE_URL']>
+  url: <%= ENV['DATABASE_URL'] %>
