@@ -34,6 +34,10 @@ class UsersController < ApplicationController
     @favorites = @user.likees(Product)
   end
 
+
+
+
+  
   private
 
   def set_user
