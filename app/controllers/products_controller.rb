@@ -22,28 +22,6 @@ class ProductsController < ApplicationController
     @star_repeat_select = Review.star_repeat_select
   end
 
-  def new
-    @product = Product.new
-    @creategories = Category.all
-  end
-
-  def create
-    @product = Product.new(product_params)
-    @product.category_id = 1
-    @product.save
-    redirect_to("/")
-  end
-
-  def edit
-    @product = Product.find(params[:id])
-  end
-
-  def update
-    @product = Product.find(params[:id])
-    @product.update(product_params)
-    redirect_to("/")
-  end
-
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
