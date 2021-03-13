@@ -4,38 +4,39 @@ class Dashboard::CategoriesController < ApplicationController
     layout "dashboard/dashboard"
 
     def index
-    @categories = Category.display_list(params[:page])
+        @categories = Category.display_list(params[:page])
     end
 
     def show
     end
 
     def create
-    category = Category.new(category_params)
-    category.save
-    redirect_to dashboard_categories_path
+        category = Category.new(category_params)
+        category.save
+        redirect_to dashboard_categories_path
     end
 
     def edit
     end
 
     def update
-    @category.update(category_params)
-    @category.save
-    redirect_to dashboard_categories_path
+        @category.update(category_params)
+        @category.save
+        redirect_to dashboard_categories_path
     end
 
     def destroy
-    @category.destroy
-    redirect_to dashboard_categories_path
+        @category.destroy
+        redirect_to dashboard_categories_path
     end
 
     private
+
     def set_category
         @category = Category.find(params[:id])
     end
 
     def category_params
-        params.require(:category).permit(:name,:description,:major_category_name)
+        params.permit(:name,:description,:major_category_name)
     end
 end
