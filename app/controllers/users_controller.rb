@@ -34,6 +34,12 @@ class UsersController < ApplicationController
     @favorites = @user.likees(Product)
   end
 
+  def destroy
+    @user.deleted_flg = true
+    @user.update
+    redirect_to mypage_users_url
+  end
+
 
 
 
