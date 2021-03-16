@@ -3,7 +3,7 @@ class Product < ApplicationRecord
   has_many :reviews
   acts_as_likeable
 
-  
+
   extend DisplayList
   scope :on_category, -> (category) { where(category_id: category) }
   scope :sort_order, -> (order) { order(order) }
@@ -31,6 +31,8 @@ class Product < ApplicationRecord
 
   scope :in_cart_product_names, -> (cart_item_ids) { where(id: cart_item_ids).pluck(:name) }
   scope :recently_products, -> (number) {order(created_at: "desc").take(number) }
+  scope :recommend_products, -> (number) { where(recommend_flag: true).take(number) }
+
 
   def reviews_new
     reviews.new
