@@ -28,12 +28,13 @@ class Dashboard::ProductsController < ApplicationController
   
     def new
       @categories = Category.all
+      @product = Product.new
     end
   
     def create
-      product = Product.new(product_params)
-      product.save
-      redirect_to _pathdashboard_products
+      @product = Product.new(product_params)
+      @product.save
+      redirect_to dashboard_products_path
     end
   
     def edit
@@ -56,6 +57,6 @@ class Dashboard::ProductsController < ApplicationController
       end
   
       def product_params
-        params.require(:product).permit(:name, :description, :price, :recommend_flag, :carriage_flag, :category_id)
+        params.require(:product).permit(:name, :description, :price, :recommend_flag, :carriage_flag, :category_id, :image)
       end
   end
