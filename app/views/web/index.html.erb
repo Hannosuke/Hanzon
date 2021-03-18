@@ -8,7 +8,11 @@
       <% @recommend_products.each do |recommend_product| %>
         <div class="col-4">
           <%= link_to product_path(recommend_product) do %>
-            <%= image_tag "/images/dummy.png", class: "img-thumbnail" %>
+            <% if recommend_product.image.attached? %>
+              <%= image_tag recommend_product.image, class: "img-thumbnail" %>
+            <% else %>
+              <%= image_tag "/images/dummy.png", class: "img-thumbnail" %>
+            <% end %>
           <% end %>
           <div class="row">
             <div class="col-12">
@@ -24,16 +28,20 @@
 
     <h1>新着商品</h1>
     <div class="row">
-      <% @recently_products.each do |recentrly_product| %>
+      <% @recently_products.each do |recently_product| %>
         <div class="col-3">
-          <%= link_to product_path(recentrly_product) do %>
-            <%= image_tag "/images/dummy.png", class: "img-thumbnail" %>
+          <%= link_to product_path(recently_product) do %>
+            <% if recently_product.image.attached? %>
+              <%= image_tag recently_product.image, class: "img-thumbnail" %>
+            <% else %>
+              <%= image_tag "/images/dummy.png", class: "img-thumbnail" %>
+            <% end %>
           <% end %>
           <div class="row">
             <div class="col-12">
               <p class="samazon-product-level mt-2">
-                <%= recentrly_product.name %>
-                <label>¥<%= recentrly_product.price %>
+                <%= recently_product.name %>
+                <label>¥<%= recently_product.price %>
               </p>
             </div>
           </div>
