@@ -4,15 +4,12 @@ class ShoppingCart < ApplicationRecord
   scope :set_user_cart, -> (user) { user_cart = where(user_id: user.id, buy_flag: false)&.last
                                     user_cart.nil? ? ShoppingCart.create(user_id: user.id)
                                                     : user_cart }
-
+  scope :bought_carts, -> (ids) { where("id LIKE ?", "%#{ids}%")}
   scope :bought_cart_ids, -> { where(buy_flag: true).pluck(:id) }
   scope :sort_list, -> { 
       {
-      "並び替え" => "", 
-      "価格の安い順" => "price asc",
-      "価格の高い順" => "price desc", 
-      "出品の古い順" => "updated_at asc", 
-      "出品の新しい順" => "updated_at desc"
+      "日別" => "day",
+      "月別" => "month"
       }
   }
 
@@ -67,6 +64,23 @@ class ShoppingCart < ApplicationRecord
     end
     return hash
   end
+
+  def self.get_orders(code = {})
+    code.present? ? bought_carts = bought_carts(code[:code])
+                  : bought_carts = ""
+    return if bought_carts.blank?
+    cart_users_list = bought_cart_user_ids_list
+    user_ids_and_names_hash = User.where(id: cart_users_list).pluck(:id, :name).to_h
+
+    hash = Hash.new { |h,k| h[k] = {} }
+
+    bought_carts.each do |bought_cart|
+      hash[bought_cart.id][:user_name] = user_ids_and_names_hash[bought_cart.user_id]
+      hash[bought_cart.id][:updated_at] = bought_cart.updated_at.to_datetime.strftime("%Y-%m-%d %H:%M:%S")
+      hash[bought_cart.id][:price_total] = bought_cart.total.fractional / 100
+    end
+    return hash
+  end  
 
   def tax_pct
       0
