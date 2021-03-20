@@ -45,6 +45,8 @@ GEM
     activerecord (6.0.3.4)
       activemodel (= 6.0.3.4)
       activesupport (= 6.0.3.4)
+    activerecord-import (1.0.8)
+      activerecord (>= 3.2)
     activestorage (6.0.3.4)
       actionpack (= 6.0.3.4)
       activejob (= 6.0.3.4)
@@ -99,6 +101,8 @@ GEM
     ffi (1.13.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    groupdate (5.2.2)
+      activesupport (>= 5)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     jbuilder (2.10.1)
@@ -253,6 +257,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-import
   acts_as_shopping_cart
   bootsnap (>= 1.4.2)
   bootstrap
@@ -260,6 +265,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   devise
   dotenv-rails
+  groupdate
   jbuilder (~> 2.7)
   jquery-rails
   kaminari
