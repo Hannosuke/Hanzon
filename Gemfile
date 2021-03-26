@@ -53,6 +53,9 @@ gem 'groupdate'
 # 複数のレコードを一括で登録、更新できる
 gem 'activerecord-import'
 
+# クレジットカード決済機能を導入できる
+gem 'payjp'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
